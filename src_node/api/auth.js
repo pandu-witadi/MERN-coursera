@@ -9,6 +9,9 @@ const Auth = require('../util/is-auth')
 const User = require('../model/user')
 
 
+router.get('/find-all', authController.find_all)
+
+
 router.post('/register', [
 
     check('email')

@@ -6,6 +6,8 @@ const courseController =require('../module/course')
 const Auth = require('../util/is-auth')
 
 
+router.get('/find-all', courseController.find_all)
+
 router.post('/delete', Auth.authentication, courseController.deleteCourse)
 
 router.get('/:courseName/:courseId', Auth.authentication, courseController.CoursePage)

@@ -2,13 +2,29 @@
 //
 const { passwordHash, comparePassword } = require('../util/bcrypt')
 const { createToken, decodeToken } = require('../util/jwt')
+
 const User = require('../model/user')
 const Otp = require('../model/otp')
 
 const { validationResult } = require('express-validator')
 const CF = require('../conf/conf_app')
 
-exports.register = async (req, res) => {
+
+exports.find_all = async(req, res) => {
+    try {
+        let arr = await User.find()
+        return res.status(200).json({
+            "data": arr
+        })
+    } catch( err ) {
+        return res.status(401).json({
+            "error": err
+        })
+    }
+}
+
+
+exports.register = async(req, res) => {
     const { email, password, name, ...otherKeys } = req.body
     console.log(email, name, password)
 

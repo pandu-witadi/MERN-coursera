@@ -8,6 +8,18 @@ const Course = require('../model/courses')
 const User = require('../model/user')
 
 
+exports.find_all = async(req, res) => {
+    try {
+        let arr = await Course.find()
+        return res.status(200).json({
+            "data": arr
+        })
+    } catch( err ) {
+        return res.status(401).json({
+            "error": err
+        })
+    }
+}
 
 exports.deleteCourse = async (req, res) => {
     const { courseId, ...otherKeys } = req.body

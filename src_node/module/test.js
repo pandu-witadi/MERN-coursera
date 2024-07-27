@@ -9,21 +9,22 @@ let api = {
         "/api/test": {
             "method": "GET",
             "url": "{host}/api/test",
-            "input": {},
             "desc": "test get check server health and API"
         }
     },
-    "user": {
-
+    "auth": {
+        "/api/auth": {
+            "method": "GET",
+            "url": "{host}/api/auth/find-all",
+            "desc": "find all user"
+        }
     },
-    "project" : {
-
-    },
-    "WK": {
-
-    },
-    "KKKS" : {
-        
+    "course" : {
+        "/api/auth": {
+            "method": "GET",
+            "url": "{host}/api/course/find-all",
+            "desc": "find all course"
+        }
     }
 }
 

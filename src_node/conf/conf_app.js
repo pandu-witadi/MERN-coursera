@@ -8,7 +8,7 @@ let CF = {
         version: "0.0.1"
     },
     server: {
-        port: 5155,
+        port: 5152,
         apiPath: '/api',
         ENV: 'development'
     },
